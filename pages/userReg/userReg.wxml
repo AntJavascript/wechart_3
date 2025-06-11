@@ -1,1 +1,16 @@
 // pages/userReg/userReg.js
+<scroll-view class="user-register" scroll-y type="custom">
+ <view class="login-title">授权登录</view>
+<view class="avatar-wrapper">
+  <text>头像</text>
+  <view class="placeholder">请选择头像</view>
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <van-image class="avatar" round width="10rem" height="10rem" src="{{avatarUrl}}" />
+  </button> 
+</view>
+<view class="nickname">
+  <text>昵称</text>
+  <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange" />
+</view>
+<view class="Phone"></view>
+</scroll-view>
