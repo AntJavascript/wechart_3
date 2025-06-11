@@ -12,7 +12,13 @@ Page({
   onInputChange(e) {
     const nickName = e.detail.value
     this.setData({
-      "nickName": nickName,
+      nickName,
     })
   },
+  onChooseAvatar(e) {
+    const { avatarUrl } = e.detail 
+    this.setData({
+      avatarUrl,
+    })
+  }
 })
