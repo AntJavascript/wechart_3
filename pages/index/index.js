@@ -17,6 +17,9 @@ Page({
       url: '../logs/logs'
     })
   },
+  upload() {
+      console.log(wx)
+  },
   onChooseAvatar(e) {
     const { avatarUrl } = e.detail
     const { nickName } = this.data.userInfo

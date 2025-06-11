@@ -17,7 +17,7 @@
       </block>
     </view>
     <view class="usermotto">
-        <van-button type="info">注册</van-button>
+        <van-button type="info" bindtap="upload">注册</van-button>
     </view>
   </view>
 </scroll-view>
