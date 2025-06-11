@@ -1,2 +1,15 @@
 <!--pages/my/index.wxml-->
-<text>pages/my/index.wxml</text>
+<scroll-view type="custom">
+  <view wx:if="{{isLogin}}" class="user-info-wrapper">
+    <van-image width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+    <view class="user-info">
+      <viwe class="name">write less do mo</viwe>
+      <viwe class="level">用户</viwe>
+    </view>
+    <view class="edit">编辑资料</view>
+  </view>
+  <view class="no-login" wx:else> 
+    <van-image width="100" height="100" src="{{defaultAvatarUrl}}" />
+    <text class="level">登录/注册</text>
+  </view>
+</scroll-view>
