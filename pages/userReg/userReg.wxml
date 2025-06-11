@@ -12,5 +12,5 @@
   <text>昵称</text>
   <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange" />
 </view>
-<view class="Phone"></view>
+<van-button type="info">授权登录</van-button>
 </scroll-view>
