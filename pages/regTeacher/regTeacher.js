@@ -18,4 +18,7 @@ Page({
     vocationalCertificates: [], // 职业证书
     HonorCertificates: [], // 荣誉证书
   },
+  bindDisciplineChange(){
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+  }
 })
