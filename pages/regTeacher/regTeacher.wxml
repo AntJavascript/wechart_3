@@ -76,4 +76,8 @@
     show-word-limit
     autosize= { maxHeight: 100, minHeight: 50 }
   />
+<view class="personal-photos">
+    <view>上传照片<text class="required">*</text></view>
+    <van-uploader file-list="{{ personalPhotos }}" bind:after-read="afterRead" multiple />
+</view>
 </scroll-view>
