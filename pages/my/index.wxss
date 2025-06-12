@@ -6,22 +6,29 @@
   padding: 20rpx;
   padding-right: 0;
   position: relative;
-  .face {
+  
+  
+}
+.user-info-wrapper .face {
     margin-right: 14rpx;
   }
-  .user-info {
+.user-info-wrapper .user-info {
     font-size: 14rpx;
     color: #fff;
-    .name{
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+    
     .level{
       background: #eee;
     }
   }
-  .edit {
+.user-info-wrapper .user-info .name{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+.user-info-wrapper .user-info .level{
+      background: #eee;
+    }
+.user-info-wrapper .edit {
     font-size: 14rpx;
     padding: 8rpx;
     background: #eee;
@@ -30,4 +37,11 @@
     border-top-left-radius: 6rpx;
     border-bottom-left-radius: 6rpx;
   }
+.no-login {
+  display: flex;
+  align-items: center;
+  background: #1989fa;
+  padding: 20rpx;
+  padding-right: 0;
+  position: relative;
 }
