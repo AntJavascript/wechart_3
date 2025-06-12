@@ -78,6 +78,6 @@
   />
 <view class="personal-photos">
     <view>上传照片<text class="required">*</text></view>
-    <van-uploader file-list="{{ personalPhotos }}" bind:after-read="afterRead" multiple />
+    <van-uploader file-list="{{ personalPhotos }}" bind:after-read="afterRead" />
 </view>
 </scroll-view>
