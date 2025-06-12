@@ -11,4 +11,22 @@
     placeholder="请输入联系电话"
     input-align="right"
   />
+<van-field
+    model:value="{{ phone }}"
+    label="价格"
+    placeholder="请输入价格/小时"
+    input-align="right"
+  />
+<picker bindchange="bindDisciplineChange" value="{{index}}" range="{{disciplineArray}}">
+    <view class="picker">
+      {{discipline ? discipline : '请选择教学学科'}}
+    </view>
+</picker>
+<van-field
+    model:value="{{ teachingYears }}"
+    label="教龄"
+    type="number"
+    placeholder="请输入教龄"
+    input-align="right"
+  />
 </scroll-view>
