@@ -25,9 +25,15 @@ Page({
       }
     })
   },
-toRegister(){
-  wx.navigateTo({
-    url: '/pages/userReg/userReg'
-  })
-}
+  toRegister(){
+    wx.navigateTo({
+      url: '/pages/userReg/userReg'
+    })
+  },
+  toRegisterTeach(){
+    wx.navigateTo({
+      url: '/pages/regTeacher/regTeacher'
+    })
+  },
+  toFindTeach(){}
 })
