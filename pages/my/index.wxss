@@ -45,3 +45,9 @@
   padding-right: 0;
   position: relative;
 }
+.no-login .face {
+  margin-right: 14rpx;
+}
+.no-login .name {
+
+}
