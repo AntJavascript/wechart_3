@@ -28,6 +28,7 @@
         input-align="right"
         readonly
         required
+        is-link
       />
 </picker>
 <van-field
@@ -46,6 +47,7 @@
         input-align="right"
         readonly
         required
+        is-link
       />
 </picker>
 <van-field
@@ -63,6 +65,14 @@
         input-align="right"
         readonly
         required
+        is-link
       />
 </picker>
+<van-field
+    value="{{personaldesc}}"
+    label="个人介绍"
+    placeholder="请填写你的详细个人介绍"
+    input-align="right"
+    required
+  />
 </scroll-view>
