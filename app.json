@@ -5,9 +5,9 @@
     "pages/userReg/userReg"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "Weixin",
-    "navigationBarBackgroundColor": "#ffffff"
+    "navigationBarBackgroundColor": "#1989fa"
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
