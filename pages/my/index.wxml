@@ -14,7 +14,7 @@
     <text class="name">登录/注册</text>
   </view>
 </block>
-<block>
+<view class="actions">
   <view class="find-teacher">
     <view>
       <text class="title">帮我找</text>
@@ -29,5 +29,5 @@
     </view>
     <van-icon name="arrow" />
   </view>
-</block>
+</view>
 </scroll-view>
