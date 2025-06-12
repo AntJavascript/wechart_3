@@ -4,23 +4,31 @@
     label="姓名"
     placeholder="请输入真实姓名"
     input-align="right"
+    required
   />
 <van-field
     model:value="{{ phone }}"
     label="联系电话"
     placeholder="请输入联系电话"
     input-align="right"
+    required
   />
 <van-field
     model:value="{{ phone }}"
     label="价格"
     placeholder="请输入价格/小时"
     input-align="right"
+    required
   />
-<picker bindchange="bindDisciplineChange" value="{{index}}" range="{{disciplineArray}}">
-    <view class="picker">
-      {{discipline ? discipline : '请选择教学学科'}}
-    </view>
+<picker bindchange="bindDisciplineChange" value="{{discipline}}" range="{{disciplineArray}}">
+    <van-field
+        value="{{discipline !== '' && disciplineArray[discipline]}}"
+        label="学科"
+        placeholder="请选择教学学科"
+        input-align="right"
+        readonly
+        required
+      />
 </picker>
 <van-field
     model:value="{{ teachingYears }}"
@@ -28,5 +36,33 @@
     type="number"
     placeholder="请输入教龄"
     input-align="right"
+    required
   />
+<picker bindchange="bindEducationChange" value="{{discipline}}" range="{{educationArray}}">
+    <van-field
+        value="{{discipline !== '' && educationArray[education]}}"
+        label="学历"
+        placeholder="请选择学历"
+        input-align="right"
+        readonly
+        required
+      />
+</picker>
+<van-field
+    model:value="{{ school }}"
+    label="毕业院校"
+    placeholder="请输入毕业院校"
+    input-align="right"
+    required
+  />
+<picker bindchange="bindTeachingMethodChange" value="{{teachingMethod}}" range="{{teachingMethodArray}}">
+    <van-field
+        value="{{teachingMethod !== '' && teachingMethodArray[teachingMethod]}}"
+        label="授课方式"
+        placeholder="请选择授课方式"
+        input-align="right"
+        readonly
+        required
+      />
+</picker>
 </scroll-view>
