@@ -51,3 +51,38 @@
 .no-login .name {
 
 }
+.actions {
+  margin: 12rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.actions .find-teacher {
+  background-color: #edf6fa;
+  padding: 14rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.actions .find-teacher .title {
+  font-size: 16rpx;
+  font-weight: bold;
+}
+.actions .find-teacher .desc {
+  font-size: 14rpx;
+}
+.actions .find-teacher .icon {}
+.actions .teacher {
+  background-color: #edf6fa;
+  padding: 14rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.actions .teacher .title {
+  font-size: 16rpx;
+  font-weight: bold;
+}
+.actions .teacher .desc {
+  font-size: 14rpx;
+}
+.actions .teacher .icon {}
