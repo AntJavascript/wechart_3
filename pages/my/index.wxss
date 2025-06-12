@@ -72,7 +72,7 @@
 }
 .actions .find-teacher .icon {}
 .actions .teacher {
-  background-color: #edf6fa;
+  background-color: #f1faf4;
   padding: 14rpx;
   display: flex;
   justify-content: space-between;
