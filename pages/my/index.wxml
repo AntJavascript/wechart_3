@@ -20,14 +20,14 @@
       <text class="title">帮我找</text>
       <text class="desc">帮我找老师</text>
     </view>
-    <van-icon name="arrow" />
+    <van-icon class="icon" name="arrow" />
   </view>
   <view class="teacher">
     <view>
       <text class="title">教员入住</text>
       <text class="desc">教员入住</text>
     </view>
-    <van-icon name="arrow" />
+    <van-icon class="icon" name="arrow" />
   </view>
 </view>
 </scroll-view>
