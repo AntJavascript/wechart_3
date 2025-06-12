@@ -72,7 +72,8 @@
     value="{{personaldesc}}"
     label="个人介绍"
     placeholder="请填写你的详细个人介绍"
-    input-align="right"
     required
+    show-word-limit
+    autosize= { maxHeight: 100, minHeight: 50 }
   />
 </scroll-view>
