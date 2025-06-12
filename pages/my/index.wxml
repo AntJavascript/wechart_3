@@ -2,7 +2,7 @@
 <scroll-view type="custom">
 <block>
   <view wx:if="{{isLogin}}" class="user-info-wrapper">
-    <van-image width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+    <van-image width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg" class="face" />
     <view class="user-info">
       <viwe class="name">write less do mo</viwe>
       <viwe class="level">用户</viwe>
