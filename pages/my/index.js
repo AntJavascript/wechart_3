@@ -32,6 +32,7 @@ Page({
     })
   },
   toRegisterTeach(){
+      console.log(1111)
     wx.navigateTo({
       url: '/pages/regTeacher/regTeacher'
     })

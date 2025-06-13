@@ -2,11 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/my/index",
-    "pages/userReg/userReg"
+    "pages/userReg/userReg",
+    "pages/regTeacher/regTeacher"
   ],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "首页",
     "navigationBarBackgroundColor": "#1989fa"
   },
   "componentFramework": "glass-easel",

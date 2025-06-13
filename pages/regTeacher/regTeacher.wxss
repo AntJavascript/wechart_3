@@ -1,0 +1,26 @@
+.personal-photos, .id-card, .academi-card, .vocational-card, .honor-card {
+    color: var(--field-label-color,#646566);
+    font-size: var(--cell-font-size,14px);
+}
+.cus-label {
+    position: relative;
+    padding: var(--cell-vertical-padding,10px) var(--cell-horizontal-padding,16px);
+}
+.cus-label::before {
+    color: var(--cell-required-color,#ee0a24);
+    content: "*";
+    font-size: var(--cell-font-size,14px);
+    left: var(--padding-xs,8px);
+    position: absolute;
+}
+.cus-label.no-requierd::before {
+    content: " ";
+}
+.submit-button {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+}
+.submit-button button {
+    width: 100%;
+}

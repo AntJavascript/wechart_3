@@ -3,86 +3,96 @@
   display: flex;
   align-items: center;
   background: #1989fa;
-  padding: 20rpx;
+  padding: 20px;
   padding-right: 0;
   position: relative;
   
   
 }
 .user-info-wrapper .face {
-    margin-right: 14rpx;
+    margin-right: 14px;
   }
 .user-info-wrapper .user-info {
-    font-size: 14rpx;
+    font-size: 14px;
     color: #fff;
-    
-    .level{
-      background: #eee;
-    }
   }
 .user-info-wrapper .user-info .name{
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      display: block;
     }
 .user-info-wrapper .user-info .level{
-      background: #eee;
+      background: #ccc;
+      padding: 6px;
+      display: inline-block;
     }
 .user-info-wrapper .edit {
-    font-size: 14rpx;
-    padding: 8rpx;
+    font-size: 14px;
+    padding: 8px;
     background: #eee;
     position: absolute;
     right: 0;
-    border-top-left-radius: 6rpx;
-    border-bottom-left-radius: 6rpx;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
   }
 .no-login {
   display: flex;
   align-items: center;
   background: #1989fa;
-  padding: 20rpx;
+  padding: 20px;
   padding-right: 0;
   position: relative;
 }
 .no-login .face {
-  margin-right: 14rpx;
+  margin-right: 14px;
 }
 .no-login .name {
 
 }
 .actions {
-  margin: 12rpx;
+  margin: 12px;
   display: flex;
   justify-content: space-between;
 }
 .actions .find-teacher {
+  box-sizing: border-box;
   background-color: #edf6fa;
-  padding: 14rpx;
+  padding: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-width: calc(50% - 10px);
+  max-width: calc(50% - 10px);
+  margin-right: 10px;
 }
 .actions .find-teacher .title {
-  font-size: 16rpx;
+  font-size: 16px;
   font-weight: bold;
+  display: block;
 }
 .actions .find-teacher .desc {
-  font-size: 14rpx;
+  font-size: 14px;
 }
 .actions .find-teacher .icon {}
 .actions .teacher {
+    box-sizing: border-box;
+    min-width: calc(50% - 10px);
+    max-width: calc(50% - 10px);
   background-color: #f1faf4;
-  padding: 14rpx;
+  padding: 34px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 1;
+  margin-left: 10px;
 }
 .actions .teacher .title {
-  font-size: 16rpx;
+  font-size: 16px;
   font-weight: bold;
+  display: block;
 }
 .actions .teacher .desc {
-  font-size: 14rpx;
+  font-size: 14px;
 }
 .actions .teacher .icon {}
