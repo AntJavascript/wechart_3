@@ -6,9 +6,14 @@ Page({
     islogin: false, // 是否已经登录
     isteacher: false, // 是否teacher
   },
-  bindViewTap() {
+  toRegTeacher() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '/pages/regTeacher/regTeacher'
+    })
+  },
+  toReguser() {
+    wx.navigateTo({
+      url: '/pages/userReg/userReg'
     })
   },
   onLoad() {
