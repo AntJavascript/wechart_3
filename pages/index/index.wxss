@@ -7,12 +7,16 @@
     display: flex;
     algin-items: center;
     justify-content: center;
-    .reg-teacher, .reg-user {
-        border: 1px solid #1989fa;
-        border-radius: 8px;
-        display: block;
-        margin: 20px;
-        padding: 16px;
-        text-algin: center;
-    }
+}
+.no-login .reg-teacher, .no-login .reg-user {
+    border: 1px solid #1989fa;
+    border-radius: 8px;
+    display: block;
+    margin: 20px;
+    padding: 16px;
+    text-algin: center;
+    font-size: 18px
+}
+.no-login .reg-teacher .icon, .no-login .reg-user .icon {
+    margin-right:14px;
 }
