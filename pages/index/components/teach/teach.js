@@ -1,13 +1,9 @@
 Component({
+    // 外部 props
     properties: {
-        // 这里定义了innerText属性，属性值可以在组件使用时指定
-        innerText: {
-            type: String,
-            value: 'default value',
-        }
     },
+    // 这里是一些组件内部数据
     data: {
-        // 这里是一些组件内部数据
         weeks: [],
         rows: [],
         currentDate: new Date(),
@@ -15,15 +11,22 @@ Component({
         currentMonth: new Date().getMonth(),
         selectedDate: null,
         weekDays: ['一', '二', '三', '四', '五', '六', '日'],
-        monthYear: ''
+        monthYear: '',
+        journeyList: []
     },
     lifetimes: {
         ready() {
-            const monthNames = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
             wx.setNavigationBarTitle({
-                title: `${this.data.currentYear}年${monthNames[this.data.currentMonth]}`
+                title: `${this.data.currentYear}年${this.data.currentMonth + 1}月`
             })
             this.generateCalendar()
+            const data = new Date().getDate()
+            console.log(data)
+            this.setData({
+                selectedDate: data,
+                currentYearName: this.data.currentYear,
+                currentMonthName: this.data.currentMonth + 1
+            })
         },
     },
     methods: {
@@ -84,9 +87,8 @@ Component({
                 this.data.currentMonth = 11;
                 this.data.currentYear--;
             }
-            const monthNames = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
             wx.setNavigationBarTitle({
-                title: `${this.data.currentYear}年${monthNames[this.data.currentMonth]}`
+                title: `${this.data.currentYear}年${this.data.currentMonth +1}月`
             })
             this.generateCalendar();
         },
@@ -96,10 +98,10 @@ Component({
                 this.data.currentMonth = 0;
                 this.data.currentYear++;
             }
-            const monthNames = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
             wx.setNavigationBarTitle({
-                title: `${this.data.currentYear}年${monthNames[this.data.currentMonth]}`
+                title: `${this.data.currentYear}年${this.data.currentMonth + 1}月`
             })
+           
             this.generateCalendar();
         },
         selectDate(event) {
@@ -109,11 +111,8 @@ Component({
             if (!date) {
                 return
             }
-            const selectedDate = new Date(this.currentYear, this.currentMonth, date);
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            selectedDate.setHours(0, 0, 0, 0);
-            
+            console.log(this.data.currentYear, this.data.currentMonth, date)
+           
             this.data.rows.forEach((item, i) => {
                 item.forEach((day, s) => {
                     let pf = 'rows['+i+']['+s+']'
@@ -125,12 +124,23 @@ Component({
                         let f = 'rows['+pindex+']['+index+']'
                         let w = f + ".active"
                         this.setData({
-                            [w]: true
+                            [w]: true,
+                            currentYearName: this.data.currentYear,
+                            currentMonthName: this.data.currentMonth + 1,
+                            selectedDate: date
                         })
                     }
                 })
             });
-            this.selectedDate = selectedDate;
+        },
+        // 获取行程
+        getJourney(date) {
+            wx.request({
+              url: 'url',
+              data: {
+                  date: date
+              }
+            })
         }
     }
 })

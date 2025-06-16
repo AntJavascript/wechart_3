@@ -10,6 +10,10 @@
     "navigationBarTitleText": "首页",
     "navigationBarBackgroundColor": "#1989fa"
   },
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
+  },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",

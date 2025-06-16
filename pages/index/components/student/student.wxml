@@ -1,0 +1,17 @@
+<view class="student-page">
+    <view class="search-container">
+        <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+    </view>
+    <scroll-view
+        class="container"
+        type="list"
+        scroll-y
+        refresher-enabled="{{true}}"
+        lower-threshold="50"
+        refresher-triggered="{{isRefreshing}}"
+        bindscrolltolower="loadMoreData"
+        bindrefresherrefresh="bindscrolltoupper"
+        >
+       <view wx:for="{{40}}" wx:key="index">{{index}}</view>
+        </scroll-view>
+</view>

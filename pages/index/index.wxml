@@ -1,10 +1,20 @@
 <!--index.wxml-->
-<scroll-view class="scrollarea" scroll-y type="custom">
-   <view wx:if="{{logined}}" class="">
+   <view wx:if="{{logined && isteacher}}" class="">
    <teach-page></teach-page>
    </view>
-   <view wx:else class="no-login">
-      <view class="reg-teacher" bindtap="toRegTeacher">注册教员</view>
-      <view class="reg-user" bindtap="toReguser">注册学员</view>
+   <view wx:if="{{logined && !isteacher}}" class="">
+    <student-page></student-page>
    </view>
-</scroll-view>
+   <view wx:else class="no-login">
+   <image src="./images/dancers-7731738_1280.jpg" mode="heightFix"></image>
+   <van-image
+  width="10rem"
+  height="10rem"
+  fit="contain"
+  src="./images/dancers-7731738_1280.jpg"
+/>
+     <view class="btns">
+        <view class="reg-teacher" bindtap="toRegTeacher">注册教员</view>
+      <view class="reg-user" bindtap="toReguser">注册学员</view>
+      </view>
+   </view>

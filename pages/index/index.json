@@ -1,6 +1,8 @@
 {
     "componentFramework": "glass-easel",
     "usingComponents": {
-        "teach-page": "./components/teach/teach"
+        "teach-page": "./components/teach/teach",
+        "student-page": "./components/student/student",
+        "van-image": "@vant/weapp/image/index"
     }
 }

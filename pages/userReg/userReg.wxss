@@ -1,0 +1,8 @@
+.submit-button {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+}
+.submit-button button {
+    width: 80%;
+}

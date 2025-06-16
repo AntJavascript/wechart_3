@@ -1,0 +1,10 @@
+/* pages/index/components/student/student.wxss */
+.student-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    overflow: hidden;
+    height: 100%;
+}

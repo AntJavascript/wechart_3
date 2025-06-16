@@ -8,10 +8,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+.no-login image {
+ position: absolute;
+ z-index: 1;
+ width: 100%;
+ height: 100%;
+ opacity: .8;
+}
+.no-login .btns {
+    position: absolute;
+    z-index: 10;
 }
 .no-login .reg-teacher, .no-login .reg-user {
     border: 1px solid #1989fa;
-    color: #1989fa;
+    color: #fff;
+    background: #1989fa;
+    opacity: .8;
     border-radius: 8px;
     display: block;
     margin: 20px;

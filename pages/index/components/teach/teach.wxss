@@ -51,3 +51,13 @@
 .calendar-day.selected.today {
     background-color: #90EE90;
 }
+.journey {
+    padding: var(--cell-vertical-padding,10px) var(--cell-horizontal-padding,16px);
+}
+ .p10 {
+ height: 10px;
+ background-color: #eee;
+}
+.journey-list {
+    width: 100%;
+}

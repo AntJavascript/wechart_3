@@ -1,7 +1,8 @@
 {
-  "navigationBarTitleText": "授权登录",
+  "navigationBarTitleText": "注册学员",
   "usingComponents": {
-    "van-image": "@vant/weapp/image/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-uploader": "@vant/weapp/uploader/index",
     "van-button": "@vant/weapp/button/index"
   }
 }
