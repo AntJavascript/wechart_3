@@ -4,6 +4,5 @@
    <view wx:else class="no-login">
       <view class="reg-teacher" bindtap="toRegTeacher">注册教员</view>
       <view class="reg-user" bindtap="toReguser">注册学员</view>
-      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">getPhoneNumber</button>
    </view>
 </scroll-view>
