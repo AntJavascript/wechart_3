@@ -1,8 +1,12 @@
 <view class="teach-travel">
-  <van-calendar
-    title="日历"
-    poppable="{{ false }}"
-    show-confirm="{{ false }}"
-    class="calendar"
-  />
+  <div class="calendar">
+        <div class="calendar-header">
+            <h2 id="monthYear"></h2>
+            <div class="calendar-buttons">
+                <button onclick="prevMonth()">上个月</button>
+                <button onclick="nextMonth()">下个月</button>
+            </div>
+        </div>
+        <div class="calendar-weeks" id="calendarWeeks"></div>
+    </div>
 </view>
