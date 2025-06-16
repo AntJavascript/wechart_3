@@ -1,5 +1,6 @@
 {
     "componentFramework": "glass-easel",
     "usingComponents": {
+        "teach-page": "./components/teach/teach"
     }
 }

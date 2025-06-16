@@ -21,7 +21,6 @@ Page({
       },
       fail () {
         // session_key 已经失效，需要重新执行登录流程
-        _this.setData({isLogin: false})
         wx.login() //重新登录
       }
     })

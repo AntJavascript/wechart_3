@@ -1,0 +1,13 @@
+<view class="teach-travel">
+    <view class="calendar">
+        <view class="calendar-header">
+            <button bind:tap="prevMonth">上个月</button>
+            <button bind:tap="nextMonth">下个月</button>
+        </view>
+        <view class="calendar-weeks" id="calendarWeeks">
+            <view class="calendar-week" wx:for="{{rows}}" wx:key="index" wx:for-index="indexs">
+                <view bind:tap="selectDate" data-item="{{item}}" data-pindex="{{indexs}}" data-index="{{index}}" class="[calendar-day, {{item.today ? 'today' : ''}}, {{item.isEmpty ? 'empty' : ''}}, {{item.active ? 'active' : ''}}]" wx:for="{{item}}" wx:key="index">{{item.textContent}}</view>
+            </view>
+        </view>
+    </view>
+</view>
