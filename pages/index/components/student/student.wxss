@@ -8,3 +8,17 @@
     overflow: hidden;
     height: 100%;
 }
+.container .item {
+    display: flex;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #eee;
+}
+.container .item .face {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+.container .item .face image {
+    width: 100px;
+    height: 100px;
+}
