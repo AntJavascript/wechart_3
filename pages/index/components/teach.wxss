@@ -1,1 +1,9 @@
+.teach-travel {
 
+}
+.teach-travel .van-calendar__header .van-calendar__header-title {
+  display: none
+}
+.teach-travel .van-calendar__body .van-calendar__day{
+  height: 44px;
+}
