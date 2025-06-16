@@ -1,9 +1,53 @@
-.teach-travel {
+.calendar {
+            margin: 0px auto;
+            padding: 0px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
 
-}
-.teach-travel .van-calendar__header .van-calendar__header-title {
-  display: none
-}
-.teach-travel .van-calendar__body .van-calendar__day{
-  height: 44px;
-}
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .calendar-header h2 {
+            margin: 0;
+        }
+
+        .calendar-buttons button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+       
+
+        .calendar-week {
+            display: flex;
+            margin-bottom: 5px;
+        }
+
+        .calendar-day {
+            flex: 1;
+            height: 40px;
+            text-align: center;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .calendar-day.selected {
+            background-color: #b0e0e6;
+        }
+
+        .calendar-day.today {
+            background-color: #e0e0e0;
+        }
+
+        .calendar-day.selected.today {
+            background-color: #90EE90;
+        }
