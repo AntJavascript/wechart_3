@@ -22,3 +22,17 @@
     width: 100px;
     height: 100px;
 }
+.container .item .content {
+    font-size: 14px;
+}
+.container .item .content .name-type {
+     display: flex;
+     justify-content: space-between;
+}
+.container .item .content .name-type .discipline {
+    background: #f60;
+    padding: 2px 6px;
+}
+.container .item .content .price {}
+.container .item .content .school {}
+.container .item .content .desc {}
