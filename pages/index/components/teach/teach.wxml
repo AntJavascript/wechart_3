@@ -1,8 +1,8 @@
 <view class="teach-page">
     <view class="calendar">
         <view class="calendar-header">
-            <button bind:tap="prevMonth">上个月</button>
-            <button bind:tap="nextMonth">下个月</button>
+            <view class="btn" bind:tap="prevMonth">上个月</view>
+            <view class="btn" bind:tap="nextMonth">下个月</view>
         </view>
         <view class="calendar-weeks" id="calendarWeeks">
             <view class="calendar-week" wx:for="{{rows}}" wx:key="index" wx:for-index="indexs">
@@ -12,13 +12,41 @@
     </view>
     <view class="p10"></view>
     <view class="journey">
-            
             {{currentYearName}}年{{currentMonthName}}月{{selectedDate}}行程
         </view>
         <view class="journey-list">
             <van-cell-group>
-                <van-cell title="单元格（状态）" value="内容" label="描述信息" />
-                <van-cell title="单元格（状态）" value="内容" label="描述信息"  />
+                <van-cell  value="时间段" label="地址" bind:click="handle" data-journeyId="1" >
+                    <view slot="title" class="title">
+                        <view class="van-cell-text">姓名</view>
+                        <van-tag type="danger">拒绝</van-tag>
+                    </view>
+                </van-cell>
+                <van-cell  value="时间段" label="地址" bind:click="handle" data-journeyId="1" >
+                    <view slot="title" class="title">
+                        <view class="van-cell-text">姓名</view>
+                        <van-tag type="primary">待接受</van-tag>
+                    </view>
+                </van-cell>
+                <van-cell  value="时间段" label="地址" bind:click="handle" data-journeyId="1" >
+                    <view slot="title" class="title">
+                        <view class="van-cell-text">姓名</view>
+                        <van-tag type="warning">处理中</van-tag>
+                    </view>
+                </van-cell>
+                <van-cell  value="时间段" label="地址" bind:click="handle" data-journeyId="1" >
+                    <view slot="title" class="title">
+                        <view class="van-cell-text">姓名</view>
+                        <van-tag type="success">完成</van-tag>
+                    </view>
+                </van-cell>
+                <van-cell  value="时间段" label="地址" bind:click="handle" data-journeyId="1" >
+                    <view slot="title" class="title">
+                        <view class="van-cell-text">姓名</view>
+                        <view class="tag cancel">已过期</view>
+                    </view>
+                </van-cell>
             </van-cell-group>
         </view>
+        <van-dialog id="van-dialog" />
 </view>

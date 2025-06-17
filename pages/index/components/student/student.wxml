@@ -5,16 +5,16 @@
     <scroll-view class="container" type="list" scroll-y refresher-enabled="{{true}}" lower-threshold="50" refresher-triggered="{{isRefreshing}}" bindscrolltolower="loadMoreData" bindrefresherrefresh="bindscrolltoupper">
         <view wx:for="{{40}}" wx:key="index" class="item">
             <view class="face">
-                <image src="../../images/dancers-7731738_1280.jpg" mode="aspectFit"></image>
+                <image src="../../images/dancers-7731738_1280.jpg" mode="widthFix"></image>
             </view>
             <view class="content">
                 <view class="name-type">
                     <view class="name">李老师</view>
                     <view class="discipline">表演</view>
                 </view>
-                <view class="price">100/小时</view>
+                <!-- <view class="price">100/小时</view> -->
                 <view class="school">毕业院校</view>
-                <view class="desc">asdsadasd萨达撒大声地撒打算打算大萨达撒大师的阿萨德阿萨德阿萨德阿是大</view>
+                <view class="desc">asdsadasd萨达撒大声地撒打算打算大萨达撒大师的阿萨德阿萨德阿萨德阿是大asdsadasd萨达撒大声地撒打算打算大萨达撒大师的阿萨德阿萨德阿萨德阿是大</view>
             </view>
         </view>
     </scroll-view>

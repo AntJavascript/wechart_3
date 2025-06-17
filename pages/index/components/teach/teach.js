@@ -1,3 +1,4 @@
+import Dialog from '@vant/weapp/dialog/dialog';
 Component({
     // 外部 props
     properties: {
@@ -141,6 +142,30 @@ Component({
                   date: date
               }
             })
+        },
+        beforeClose(action) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                  if (action === 'confirm') {
+                    resolve(true);
+                  } else {
+                    // 拦截取消操作
+                    resolve(true);
+                  }
+                }, 1000);
+              })
+            },
+        handle(e) {
+            console.log(e)
+            Dialog.confirm({
+                zIndex:10000,
+                closeOnClickOverlay: true,
+                confirmButtonText: '接受',
+                cancelButtonText: '拒绝',
+                context:this,  // 添加this指向
+                message: '是否接受当前预约？',
+                beforeClose: this.beforeClose,
+              });
         }
     }
 })

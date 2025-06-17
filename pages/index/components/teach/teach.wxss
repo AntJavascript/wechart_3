@@ -12,8 +12,11 @@
     margin-bottom: 10px;
 }
 
-.calendar-header h2 {
-    margin: 0;
+.calendar-header .btn {
+    margin: 10px 10px;
+    padding: 4px;
+    border: 1px solid #eee;
+    font-size: 14px;
 }
 
 .calendar-buttons button {
@@ -60,4 +63,17 @@
 }
 .journey-list {
     width: 100%;
+}
+.journey-list .title {
+    display: flex;
+}
+.journey-list .title .van-cell-text {
+    margin-right: 5px;
+}
+.journey-list .title .tag {
+    font-size: var(--tag-font-size,12px);
+    padding: 0 4px;
+}
+.journey-list .title .tag.cancel {
+    background-color: #eee;
 }
