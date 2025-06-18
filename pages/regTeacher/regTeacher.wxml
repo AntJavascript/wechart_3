@@ -1,7 +1,7 @@
 <scroll-view type="custom">
     <van-field model:value="{{ name }}" label="姓名" placeholder="请输入真实姓名" input-align="right" required />
     <van-field model:value="{{ phone }}" label="联系电话" placeholder="请输入联系电话" input-align="right" required />
-    <van-field model:value="{{ phone }}" label="价格" placeholder="请输入价格/小时" input-align="right" required />
+    <van-field model:value="{{ price }}" label="价格" placeholder="请输入价格/小时" input-align="right" required />
     <picker bindchange="bindDisciplineChange" value="{{discipline}}" range="{{disciplineArray}}">
         <van-field model:value="{{disciplineArray[discipline]}}" label="学科" placeholder="请选择教学学科" input-align="right" readonly required is-link />
     </picker>
@@ -9,6 +9,8 @@
     <picker bindchange="bindEducationChange" value="{{discipline}}" range="{{educationArray}}">
         <van-field model:value="{{educationArray[education]}}" label="学历" placeholder="请选择学历" input-align="right" readonly required is-link />
     </picker>
+    <van-field model:value="{{ middleSchool }}" label="毕业院校(初中)" placeholder="请输入毕业院校" input-align="right" required />
+    <van-field model:value="{{ highSchool }}" label="毕业院校(高中)" placeholder="请输入毕业院校" input-align="right" required />
     <van-field model:value="{{ school }}" label="毕业院校" placeholder="请输入毕业院校" input-align="right" required />
     <picker bindchange="bindTeachingMethodChange" value="{{teachingMethod}}" range="{{teachingMethodArray}}">
         <van-field model:value="{{teachingMethodArray[teachingMethod]}}" label="授课方式" placeholder="请选择授课方式" input-align="right" readonly required is-link />
@@ -16,11 +18,11 @@
     <van-field model:value="{{personaldesc}}" type="textarea" label="个人介绍" placeholder="请填写你的详细个人介绍" required show-word-limit maxlength='5000' autosize="autosize" />
     <view class="personal-photos">
         <view class="cus-label">上传照片</view>
-        <van-uploader file-list="{{ personalPhotos }}" bind:after-read="personalPhotosupload" />
+        <van-uploader file-list="{{ personalPhotos }}" bind:after-read="personalPhotosupload" bind:delete="fileDelete" data-type="personalPhotos" />
     </view>
     <view class="id-card">
         <view class="cus-label">身份证</view>
-        <van-uploader file-list="{{ IDCards }}" bind:after-read="cardPhotosupload" />
+        <van-uploader file-list="{{ IDCards }}" bind:after-read="cardPhotosupload" data-type="IDCards" bind:delete="fileDelete" />
     </view>
     <view class="academi-card">
         <view class="cus-label no-requierd">学历证书（选填）</view>

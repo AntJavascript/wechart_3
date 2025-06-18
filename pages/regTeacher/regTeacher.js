@@ -12,7 +12,9 @@ Page({
     teachingYears: "", // 教龄
     education: "", // 学历
     educationArray: ["专科","本科","硕士研究生","博士研究生"], // 学历选项
-    school: "", // 毕业院校
+    middleSchool: "", // 毕业院校(初中)
+    highSchool: "", // 毕业院校(高中)
+    school: "", // 毕业院校（大学）
     teachingMethod: "", // 授课方式
     teachingMethodArray: ['学生上门', '网络授课', '上门授课'], // 授课方式选项
     personaldesc: "", // 个人描述
@@ -38,27 +40,44 @@ Page({
         teachingMethod: e.detail.value
     })
   },
-  uploadFile(file){
+  uploadFile(file, type){
+      let _this = this
     wx.uploadFile({
-        url: 'https://example.weixin.qq.com/upload', // 仅为示例，非真实的接口地址
+        url: 'http://192.168.1.104:8080/file/upload', // 仅为示例，非真实的接口地址
         filePath: file.url,
         name: 'file',
-        formData: { user: 'test' },
+        formData: { id: '1' },
         success(res) {
           // 上传完成需要更新 fileList
-          console.log(res)
+          let list = _this.data[type];
+          const data = JSON.parse(res.data)
+          list.push({ url:data.filePath})
+          _this.setData({
+            [type]: list
+          })
+          console.log(list)
         },
       });
   },
   // 个人照片上传
   personalPhotosupload(event) {
     const { file } = event.detail;
-    this.uploadFile(file)
+    this.uploadFile(file, 'personalPhotos')
+  },
+  fileDelete(event) {
+    const { index } = event.detail;
+    const { type } = event.target.dataset;
+    const list = this.data[type]
+    list.splice(index, 1)
+    console.log(index, event, list)
+    this.setData({
+        [type]: list
+    })
   },
   // 身份证上传
   cardPhotosupload(event) {
     const { file } = event.detail;
-    this.uploadFile(file)
+    this.uploadFile(file, 'IDCards')
   },
   // 学历证书上传
   academicPhotosupload(event) {
@@ -81,13 +100,27 @@ Page({
         url: 'http://192.168.1.104:8080/login/saveTeacherInfo', //仅为示例，并非真实的接口地址
        method: 'POST',
        data:{
-           name: '第一个',
-           mobile: '15817351609',
-           teachingSeniority: 10,
-           personalProfile: '我是一名老教授'
+           name: this.data.name,
+           vxName: '1111',
+           gender: 'man',
+           primarySchool: this.data.school,
+           middleSchool: this.data.middleSchool,
+           highSchool: this.data.highSchool,
+           lifePicture: this.data.personalPhotos.map((item) => {
+                return item.url
+            }).join(','),
+            chinaIdNumber: new Date().getTime(),
+           chinaIdNumberPicture: this.data.IDCards.map((item) => {
+               return item.url
+           }).join(','),
+           mobile: this.data.phone,
+           teachingSeniority: this.data.teachingYears,
+           personalProfile: this.data.personaldesc,
+           academicQualification: this.data.education
        },
         header: {
-          'content-type': 'application/json' // 默认值
+          'content-type': 'application/json', // 默认值
+          'Authorization': '1'
         },
         success (res) {
           console.log(res.data)
