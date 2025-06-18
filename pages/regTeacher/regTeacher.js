@@ -120,8 +120,9 @@ Page({
         const _this = this
         wx.chooseLocation({
             success(res) {
+                console.log(res)
                 _this.setData({
-                    address: res.address
+                    address: res.address + res.name
                 })
             }
         })

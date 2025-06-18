@@ -15,7 +15,11 @@
     <picker bindchange="bindTeachingMethodChange" value="{{teachingMethod}}" range="{{teachingMethodArray}}">
         <van-field model:value="{{teachingMethodArray[teachingMethod]}}" label="授课方式" placeholder="请选择授课方式" input-align="right" readonly required is-link />
     </picker>
-    <van-field model:value="{{ address }}" label="地址" placeholder="点击选择地址" input-align="right" required readonly bind:tap="toSelectMap" />
+    <!-- <van-field model:value="{{ address }}" label="地址" placeholder="点击选择地址" input-align="right" required readonly bind:tap="toSelectMap" /> -->
+    <view class="address" bind:tap="toSelectMap">
+        <view class="cus-label">地址</view>
+        <view class="{{[address ? '' : 'placeholder']}}">{{address ? address : '点击选择地址'}}</view>
+    </view>
     <van-field model:value="{{personaldesc}}" type="textarea" label="个人介绍" placeholder="请填写你的详细个人介绍" required show-word-limit maxlength='5000' autosize="autosize" />
     <view class="personal-photos">
         <view class="cus-label">上传照片</view>

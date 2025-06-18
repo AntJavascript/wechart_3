@@ -1,3 +1,42 @@
+.address {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    justify-content: space-between;
+    padding: var(--cell-vertical-padding,10px) var(--cell-horizontal-padding,16px);
+    padding-left: 0;
+    position: relative;
+}
+.address::after {
+    border-bottom: 1px solid #ebedf0;
+    bottom: 0;
+    box-sizing: border-box;
+    content: " ";
+    left: 16px;
+    pointer-events: none;
+    position: absolute;
+    right: 16px;
+    transform: scaleY(.5);
+    transform-origin: center;
+}
+.address .placeholder {
+    color: #bbbcbd;
+}
+.cus-label {
+    position: relative;
+    padding: var(--cell-vertical-padding,10px) var(--cell-horizontal-padding,16px);
+    flex-shrink: 0;
+}
+.cus-label::before {
+    color: var(--cell-required-color,#ee0a24);
+    content: "*";
+    font-size: var(--cell-font-size,14px);
+    left: var(--padding-xs,8px);
+    position: absolute;
+}
+.cus-label.no-requierd::before {
+    content: " ";
+}
 .submit-button {
     display: block;
     text-align: center;

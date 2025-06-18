@@ -15,7 +15,7 @@ Page({
    wx.chooseLocation({
      success(res){
        _this.setData({
-        address: res.address
+        address: res.address + res.name
        })
      }
    })
