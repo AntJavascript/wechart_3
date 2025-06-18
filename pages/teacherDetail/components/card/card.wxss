@@ -1,0 +1,4 @@
+.teach-detail-card {
+  background: #fff;
+  margin-bottom: 10px;
+}
