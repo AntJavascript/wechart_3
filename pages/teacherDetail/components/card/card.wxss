@@ -1,0 +1,16 @@
+.teach-detail-card {
+  background: #fff;
+  margin-bottom: 10px;
+}
+.teach-detail-card .title {
+  position: relative;
+  font-size: 14px;
+}
+
+.teach-detail-card .title::after {
+   content: ' ',
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    color: #0F62FE;
+}
