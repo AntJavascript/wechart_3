@@ -1,0 +1,4 @@
+<view class="teach-detail-card">
+  <view class="title">{{title}}</view>
+  <slot></slot>
+</view>
