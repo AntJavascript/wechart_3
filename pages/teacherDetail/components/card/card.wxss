@@ -4,6 +4,7 @@
 }
 .teach-detail-card .title {
   position: relative;
+  font-size: 14px;
 }
 
 .teach-detail-card .title::after {
