@@ -1,4 +1,6 @@
 // index.js
+const aip = require('../../server/aip')
+const request = require('../../server/request')
 Page({
   data: {
     logined: false, // 是否已经登录
@@ -19,8 +21,12 @@ Page({
         success (res) {
           if (res.code) {
             // 发起网络请求
-            wx.request({
-              url: `http://192.168.1.104:8080/login/checkSessionKey/${res.code}`,
+            console.log(1111, aip)
+            request({
+                url: `${aip.checkSessionKey}/${res.code}`
+            }).then(res => {
+                console.log(res)
+                wx.setStorageSync('token', res.token)
             })
           } else {
             console.log('登录失败！' + res.errMsg)

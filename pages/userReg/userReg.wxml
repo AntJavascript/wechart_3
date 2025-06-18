@@ -3,7 +3,7 @@
     <van-field model:value="{{ name }}" label="姓名" placeholder="请输入真实姓名" input-align="right" required />
     <van-field model:value="{{ phone }}" label="联系电话" placeholder="请输入联系电话" input-align="right" required />
     <van-field model:value="{{ school }}" label="毕业院校" placeholder="请输入毕业院校" input-align="right" required />
-    <van-field model:value="{{ address }}" label="地址" placeholder="点击选择地址" input-align="right" required readonly bindtap="toSelectMap" />
+    <van-field model:value="{{ address }}" label="地址" placeholder="点击选择地址" input-align="right" required readonly bind:tap="toSelectMap" />
 </view>
 <view class="submit-button" bind:tap="submit"><van-button  type="info">提交</van-button></view>
 </scroll-view>

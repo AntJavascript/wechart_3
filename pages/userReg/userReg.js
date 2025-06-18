@@ -11,9 +11,12 @@ Page({
     address: ''
   },
   toSelectMap(e) {
+      const _this = this
    wx.chooseLocation({
      success(res){
-       console.log(res)
+       _this.setData({
+        address: res.address
+       })
      }
    })
   },
