@@ -3,8 +3,8 @@ const aip = require('../../server/aip')
 const request = require('../../server/request')
 Page({
   data: {
-    logined: true, // 是否已经登录
-    isteacher: true, // 是否teacher
+    logined: false, // 是否已经登录
+    isteacher: false, // 是否teacher
   },
   toRegTeacher() {
     wx.navigateTo({
