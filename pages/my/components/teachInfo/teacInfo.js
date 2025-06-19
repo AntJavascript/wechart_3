@@ -3,17 +3,11 @@ Component({
     properties: {
     },
   data: {
-    active: 1,
+    rangeTimeShow: false,
   },
   lifetimes: {
     ready() {}
   },
   methods: {
-    onChange(event) {
-      wx.showToast({
-        title: `切换到标签 ${event.detail.name}`,
-        icon: 'none',
-      });
-    },
   }
 })
