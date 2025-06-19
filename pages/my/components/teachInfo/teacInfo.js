@@ -1,11 +1,11 @@
 Component({
   // 外部 props
     properties: {
-      startDate: {
+      startDateProps: {
         type: String,
         value: ''
       },
-      endDate: {
+      endDateProps: {
         type: String,
         value: ''
       }
@@ -16,7 +16,12 @@ Component({
     endDate: ''
   },
   lifetimes: {
-    ready() {}
+    ready() {
+      this.setData({
+        startDate: this.properties.startDateProps,
+        endDate: this.properties.endDateProps,
+      })
+    }
   },
   methods: {
      onInput(event) {
