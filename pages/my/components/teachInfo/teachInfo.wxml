@@ -3,15 +3,20 @@
   <view class='rang-time-list'></view>
   <van-button type="primary" bind:tap="add">添加可预约时间段</van-button>
   <van-popup show="{{ rangeTimeShow }}"position="bottom" custom-style="height: 30%;">
-    <view class="date-range-header"></view>
+    <view class="date-range-header">
+      <view bind:tap="cancel">取消<view>
+      <view bind:tap="confirm">确定<view>
+    </view>
     <van-datetime-picker
       type="time"
+      show-toolbar="false"
       data-type='start'
       value="{{ startDate }}"
       bind:input="onInput"
     />
   <van-datetime-picker
       type="time"
+      show-toolbar="false"
       data-type='end'
       value="{{ endDate }}"
       bind:input="onInput"
