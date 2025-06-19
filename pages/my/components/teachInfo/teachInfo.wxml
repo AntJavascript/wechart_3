@@ -1,1 +1,5 @@
-<view class='teach-info'></view>
+<view class='teach-info'>
+  <view class='rang-time-t'>我的预约时间段</view>
+  <view class='rang-time-list'></view>
+  <van-button type="primary">添加可预约时间段</van-button>
+</view>
