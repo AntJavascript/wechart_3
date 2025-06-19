@@ -1,6 +1,6 @@
 function request(params) {
     const { url, data, method = 'GET' } = params
-    var Authorization = wx.getStorageSync('Authorization')
+    const Authorization = wx.getStorageSync('token')
     return new Promise((resolve, reject) => {
         wx.request({
             url,

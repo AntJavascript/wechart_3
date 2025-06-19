@@ -175,7 +175,6 @@ Page({
                     },
                     header: {
                         'content-type': 'application/json', // 默认值
-                        'Authorization': '1'
                     },
                     success(res) {
                         console.log(res.data)
