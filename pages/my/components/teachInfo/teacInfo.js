@@ -21,5 +21,10 @@ Component({
   methods: {
      onInput(event) {
     },
+    add(){
+      this.setData({
+        rangeTimeShow: true
+      })
+    }
   }
 })
