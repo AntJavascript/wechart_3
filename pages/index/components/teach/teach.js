@@ -166,6 +166,16 @@ Component({
                 message: '是否接受当前预约？',
                 beforeClose: this.beforeClose,
               });
+        },
+        toMapApp(e) {
+            console.log(e.target.dataset)
+            const { longitude, latitude, address, name } = e.target.dataset
+            wx.openLocation({
+                longitude,
+                latitude,
+                address,
+                name
+            })
         }
     }
 })
