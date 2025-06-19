@@ -26,7 +26,9 @@ Page({
                 url: `${aip.checkSessionKey}/${res.code}`
             }).then(res => {
                 console.log(res)
-                wx.setStorageSync('token', res.token)
+              if(res.Authorization){
+                wx.setStorageSync('Authorization', res.Authorization)
+              }
             })
           } else {
             console.log('登录失败！' + res.errMsg)
