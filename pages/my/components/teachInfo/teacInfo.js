@@ -25,6 +25,14 @@ Component({
       this.setData({
         rangeTimeShow: true
       })
+    },
+    cancel(){},
+    confirm(){
+      this.setData({
+        rangeTimeShow: fase,
+        startDate: '',
+        endDate: ''
+      })
     }
   }
 })
