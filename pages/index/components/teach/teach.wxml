@@ -23,7 +23,7 @@
                     </view>
                     <view slot="label" class="label"  data-address="广东省深圳市龙华区高坳新村" data-name="清风台球" data-longitude="" data-latitude="">
                         <view class='name'>广东省深圳市龙华区高坳新村<view>
-                        <view bind:click="toMapApp">去这里</view>
+                        <view class="to-map-app" bind:click="toMapApp">去这里</view>
                     </view>
                 </van-cell>
                 <van-cell  value="时间段" label="地址" bind:click="handle" data-journeyId="1" >
