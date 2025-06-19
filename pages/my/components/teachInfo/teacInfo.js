@@ -1,11 +1,11 @@
 Component({
   // 外部 props
     properties: {
-      currentStart: {
+      startDate: {
         type: String,
         value: ''
       },
-      endStart: {
+      endDate: {
         type: String,
         value: ''
       }
