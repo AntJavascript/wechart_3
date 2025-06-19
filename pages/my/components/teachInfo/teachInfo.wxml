@@ -14,7 +14,7 @@
       data-type='start'
       value="{{ startDate }}"
       bind:input="onInput"
-      wx:if=""
+      wx:if="{{currentType === 'start'}}"
     />
   <van-datetime-picker
       type="time"
@@ -22,6 +22,7 @@
       data-type='end'
       value="{{ endDate }}"
       bind:input="onInput"
+      wx:if="{{currentType === 'end'}}"
     />
   </van-popup>
 </view>
