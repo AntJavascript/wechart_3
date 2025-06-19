@@ -3,8 +3,8 @@ const aip = require('../../server/aip')
 const request = require('../../server/request')
 Page({
   data: {
-    logined: false, // 是否已经登录
-    isteacher: false, // 是否teacher
+    logined: true, // 是否已经登录
+    isteacher: true, // 是否teacher
   },
   toRegTeacher() {
     wx.navigateTo({
@@ -21,7 +21,6 @@ Page({
         success (res) {
           if (res.code) {
             // 发起网络请求
-            console.log(1111, aip)
             request({
                 url: `${aip.checkSessionKey}/${res.code}`
             }).then(res => {

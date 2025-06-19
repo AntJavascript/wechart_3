@@ -14,7 +14,8 @@ Component({
     rangeTimeShow: false,
     startDate: '',
     endDate: '',
-    currentType: 'start'
+    currentType: 'start',
+    rangtimes: []
   },
   lifetimes: {
     ready() {
@@ -25,23 +26,38 @@ Component({
     }
   },
   methods: {
-     onInput(event) {
+     onInput(value) {
+         if (this.data.currentType === 'start') {
+            this.setData({
+                startDate: value.detail
+            })
+         } else {
+            this.setData({
+                endDate: value.detail
+            })
+         }
+        
     },
     add(){
       this.setData({
         rangeTimeShow: true
       })
     },
-    cancel(){},
+    cancel(){
+        this.setData({
+            rangeTimeShow: false
+        })
+    },
     confirm(){
       this.setData({
-        rangeTimeShow: fase,
-        startDate: '',
-        endDate: ''
+        rangeTimeShow: false,
       })
     },
     handle(e){
-      
+        const type = e.target.dataset.type
+        this.setData({
+            currentType: type,
+          })
     }
   }
 })

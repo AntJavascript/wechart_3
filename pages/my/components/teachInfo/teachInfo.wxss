@@ -1,0 +1,54 @@
+.teach-info {
+  color: #333;
+  font-size: 14px;
+}
+.teach-info .rang-time-t {
+  position: relative;
+  padding: 10px;
+}
+.teach-info .rang-time-t::before {
+  content: ' ';
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  left: 0;
+  background: #0F62FE;
+}
+.teach-info .no-data {
+  text-align: center;
+  margin: 120px 0;
+  color: #999;
+}
+.teach-info .add {
+  text-align: center;
+}
+.teach-info .popup-content {
+  width: 90vw;
+}
+.teach-info .popup-content .date-range-header {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  padding: 10px;
+  font-size: 14px;
+  box-shadow: 1px 1px 1px #eee;
+}
+.teach-info .popup-content .show-data {
+  margin-top: 20px;
+  display: flex;
+  padding: 0 30px;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+.teach-info .popup-content .show-data .start,
+.teach-info .popup-content .show-data .end {
+  background-color: #eee;
+  border: 1px solid #eee;
+  padding: 10px;
+  width: 80px;
+  text-align: center;
+}
+.teach-info .popup-content .show-data .start.active,
+.teach-info .popup-content .show-data .end.active {
+  border: 1px solid #0F62FE;
+}

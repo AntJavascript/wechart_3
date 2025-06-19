@@ -171,10 +171,13 @@ Component({
             console.log(e.target.dataset)
             const { longitude, latitude, address, name } = e.target.dataset
             wx.openLocation({
-                longitude,
-                latitude,
+                longitude: Number(longitude),
+                latitude: Number(latitude),
                 address,
-                name
+                name,
+                fail(err) {
+                    console.log(err)
+                }
             })
         }
     }

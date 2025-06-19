@@ -1,0 +1,52 @@
+.teach-info {
+    color: #333;
+    font-size: 14px;
+    .rang-time-t {
+        position: relative;
+        padding: 10px;
+        &::before {
+            content: ' ';
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            left: 0;
+            background: #0F62FE;
+        }
+    }
+    .no-data {
+        text-align: center;
+        margin: 120px 0;
+        color: #999;
+    }
+    .add {
+        text-align: center;
+    }
+    .popup-content {
+        width: 90vw;
+        .date-range-header {
+            display: flex;
+            justify-content: space-between;
+            height: 30px;
+            padding: 10px;
+            font-size: 14px;
+            box-shadow: 1px 1px 1px #eee;
+        }
+        .show-data {
+            margin-top: 20px;
+            display: flex;
+            padding: 0 30px;
+            justify-content: space-between;
+            padding-bottom: 25px;
+            .start, .end {
+                background-color: #eee;
+                border: 1px solid #eee;
+                padding: 10px;
+                width: 80px;
+                text-align: center;
+                &.active {
+                   border: 1px solid #0F62FE;
+                }
+            }
+        }
+    }
+}

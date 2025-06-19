@@ -1,28 +1,28 @@
 <view class='teach-info'>
   <view class='rang-time-t'>我的预约时间段</view>
   <view class='rang-time-list'></view>
-  <van-button type="primary" bind:tap="add">添加可预约时间段</van-button>
-  <van-popup show="{{ rangeTimeShow }}"position="bottom" custom-style="height: 30%;">
-    <view class="date-range-header">
-      <view bind:tap="cancel">取消<view>
-      <view bind:tap="confirm">确定<view>
+  <view wx:if="{{rangtimes.length == 0}}" class="no-data">你还没有添加可预约时间</view>
+  <view class="add">
+    <van-button  type="primary" bind:tap="add">添加可预约时间段</van-button>
+  </view>
+  <van-popup close-on-click-overlay show="{{ rangeTimeShow }}"  >
+    <view class="popup-content">
+        <view class="date-range-header">
+      <view bind:tap="cancel" bind:tap="cancel">取消</view>
+      <view bind:tap="confirm">确定</view>
     </view>
-    <view class="start" bind:tap="handle" data-type="start">{{startDate}}</view> ~ <view class="end" bind:tap="handle" data-type="end">{{endDate}}</view>
+    <view class="show-data">
+        <view class="{{['start', currentType == 'start' ? 'active' : '']}}" bind:tap="handle" data-type="start">{{startDate || '开始时间'}}</view> ~ 
+        <view class="{{['end', currentType == 'end' ? 'active' : '']}}" bind:tap="handle" data-type="end">{{endDate || '结束时间'}}</view>
+    </view>
+    
     <van-datetime-picker
       type="time"
-      show-toolbar="false"
+      show-toolbar="{{false}}"
       data-type='start'
       value="{{ startDate }}"
       bind:input="onInput"
-      wx:if="{{currentType === 'start'}}"
     />
-  <van-datetime-picker
-      type="time"
-      show-toolbar="false"
-      data-type='end'
-      value="{{ endDate }}"
-      bind:input="onInput"
-      wx:if="{{currentType === 'end'}}"
-    />
+    </view>
   </van-popup>
 </view>

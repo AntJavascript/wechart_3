@@ -12,45 +12,33 @@
     </view>
     <view class="p10"></view>
     <view class="journey">
-            {{currentYearName}}年{{currentMonthName}}月{{selectedDate}}行程
+        {{currentYearName}}年{{currentMonthName}}月{{selectedDate}}行程
+    </view>
+    <view class="journey-list">
+        <view class="items">
+            <van-cell use-label-slot value="时间段" bind:click="handle" data-journeyId="1" border="{{false}}">
+                <view slot="title" class="title">
+                    <view class="van-cell-text">姓名</view>
+                    <van-tag type="danger">拒绝</van-tag>
+                </view>
+            </van-cell>
+            <view class="label" >
+                <view class='name'>广东省深圳市龙华区高坳新村广东省深圳市龙华区高坳新村</view>
+                <view class="to-map-app" bind:tap="toMapApp" data-address="广东省深圳市龙华区高坳新村" data-name="清风台球" data-longitude="11.2" data-latitude="33.0">去这里</view>
+            </view>
         </view>
-        <view class="journey-list">
-            <van-cell-group>
-                <van-cell  value="时间段" label="地址" bind:click="handle" data-journeyId="1" >
-                    <view slot="title" class="title">
-                        <view class="van-cell-text">姓名</view>
-                        <van-tag type="danger">拒绝</van-tag>
-                    </view>
-                    <view slot="label" class="label"  data-address="广东省深圳市龙华区高坳新村" data-name="清风台球" data-longitude="" data-latitude="">
-                        <view class='name'>广东省深圳市龙华区高坳新村<view>
-                        <view class="to-map-app" bind:click="toMapApp">去这里</view>
-                    </view>
-                </van-cell>
-                <van-cell  value="时间段" label="地址" bind:click="handle" data-journeyId="1" >
-                    <view slot="title" class="title">
-                        <view class="van-cell-text">姓名</view>
-                        <van-tag type="primary">待接受</van-tag>
-                    </view>
-                </van-cell>
-                <van-cell  value="时间段" label="地址" bind:click="handle" data-journeyId="1" >
-                    <view slot="title" class="title">
-                        <view class="van-cell-text">姓名</view>
-                        <van-tag type="warning">处理中</van-tag>
-                    </view>
-                </van-cell>
-                <van-cell  value="时间段" label="地址" bind:click="handle" data-journeyId="1" >
-                    <view slot="title" class="title">
-                        <view class="van-cell-text">姓名</view>
-                        <van-tag type="success">完成</van-tag>
-                    </view>
-                </van-cell>
-                <van-cell  value="时间段" label="地址" bind:click="handle" data-journeyId="1" >
-                    <view slot="title" class="title">
-                        <view class="van-cell-text">姓名</view>
-                        <view class="tag cancel">已过期</view>
-                    </view>
-                </van-cell>
-            </van-cell-group>
+        <view class="items">
+            <van-cell use-label-slot value="时间段" bind:click="handle" data-journeyId="1" border="{{false}}">
+                <view slot="title" class="title">
+                    <view class="van-cell-text">姓名</view>
+                    <van-tag type="danger">拒绝</van-tag>
+                </view>
+            </van-cell>
+            <view class="label" >
+                <view class='name'>广东省深圳市龙华区高坳新村广东省深圳市龙华区高坳新村</view>
+                <view class="to-map-app" bind:tap="toMapApp" data-address="广东省深圳市龙华区高坳新村" data-name="清风台球" data-longitude="11.2" data-latitude="33.0">去这里</view>
+            </view>
         </view>
-        <van-dialog id="van-dialog" />
+    </view>
+    <van-dialog id="van-dialog" />
 </view>
