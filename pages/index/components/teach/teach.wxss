@@ -77,3 +77,10 @@
 .journey-list .title .tag.cancel {
     background-color: #eee;
 }
+.journey-list .label {
+    display: flex;
+    justify-content: space-between;
+}
+.journey-list .label .to-map-app {
+
+}
