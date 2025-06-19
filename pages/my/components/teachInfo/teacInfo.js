@@ -13,7 +13,8 @@ Component({
   data: {
     rangeTimeShow: false,
     startDate: '',
-    endDate: ''
+    endDate: '',
+    currentType: 'start'
   },
   lifetimes: {
     ready() {
@@ -38,6 +39,9 @@ Component({
         startDate: '',
         endDate: ''
       })
+    },
+    handle(e){
+      
     }
   }
 })
