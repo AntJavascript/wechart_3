@@ -7,12 +7,14 @@
       <view bind:tap="cancel">取消<view>
       <view bind:tap="confirm">确定<view>
     </view>
+    <view class="start" bind:tap="handle" data-type="start">{{startDate}}</view> ~ <view class="end" bind:tap="handle" data-type="end">{{endDate}}</view>
     <van-datetime-picker
       type="time"
       show-toolbar="false"
       data-type='start'
       value="{{ startDate }}"
       bind:input="onInput"
+      wx:if=""
     />
   <van-datetime-picker
       type="time"
