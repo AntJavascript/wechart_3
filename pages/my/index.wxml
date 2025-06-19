@@ -15,8 +15,6 @@
   </view>
 </block>
 <view class="content">
-  <view class='rang-time-t'>我的预约时间段</view>
-  <view class='rang-time-list'></view>
-  <van-button type="primary">添加可预约时间段</van-button>
+ <teach-info wx:if="isteacher"></teach-info>
 </view>
 </scroll-view>
