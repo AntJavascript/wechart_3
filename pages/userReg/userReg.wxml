@@ -1,6 +1,6 @@
 <scroll-view class="user-register" scroll-y type="custom">
 <view class="avatar-wrapper">
-    <van-field model:value="{{ name }}" label="姓名" placeholder="请输入真实姓名" input-align="right" required />
+    <van-field model:value="{{ name }}" label="姓名" placeholder="请输入姓名" input-align="right" required />
     <van-field model:value="{{ phone }}" label="联系电话" placeholder="请输入联系电话" input-align="right" required />
     <van-field model:value="{{ school }}" label="毕业院校" placeholder="请输入毕业院校" input-align="right" required />
     <view class="address" bind:tap="toSelectMap">
