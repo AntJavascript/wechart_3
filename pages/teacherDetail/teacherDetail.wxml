@@ -1,3 +1,8 @@
 <view class="teacher-detail-page">
-
+<detail-card title="基本信息">
+  <view class="content">
+    <view>姓名：<view>李老师</view></view>
+    <view>学科：<view>书法</view></view>
+  </view>
+</detail-card>
 </view>
