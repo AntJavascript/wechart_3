@@ -1,5 +1,1 @@
-{
-  "component": true,
-  "usingComponents": {
-  }
-}
+
