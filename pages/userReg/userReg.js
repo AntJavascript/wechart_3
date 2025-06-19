@@ -8,14 +8,20 @@ Page({
     name: '',
     phone: '',
     school: '',
-    address: ''
+    address: '',
+    addressName: '',
+    longitude: '',
+    latitude: '',
   },
   toSelectMap(e) {
       const _this = this
    wx.chooseLocation({
      success(res){
        _this.setData({
-        address: res.address + res.name
+        address: res.address,
+        addressName: res.name,
+        longitude: res.longitude,
+        latitude: res.latitude
        })
      }
    })
