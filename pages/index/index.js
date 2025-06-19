@@ -1,5 +1,5 @@
 // index.js
-const aip = require('../../server/aip')
+const api = require('../../server/aip')
 const request = require('../../server/request')
 Page({
   data: {
@@ -17,16 +17,26 @@ Page({
     })
   },
   onLoad() {
+      const _this = this
     wx.login({
         success (res) {
           if (res.code) {
             // 发起网络请求
             request({
-                url: `${aip.checkSessionKey}/${res.code}`
+                url: `${api.checkSessionKey}/${res.code}`
             }).then(res => {
                 console.log(res)
-              if(res.Authorization){
-                wx.setStorageSync('Authorization', res.Authorization)
+              if(res?.data?.token){
+                _this.checkUserRole(res?.data?.openid).then(user => {
+                    _this.setData({
+                        logined: true,
+                        isteacher: user.data.type === '0'
+                      })
+                })
+                wx.setStorageSync('token', res?.data?.token)
+              } 
+              if(res?.data?.openid) {
+                wx.setStorageSync('openid', res?.data?.openid)
               }
             })
           } else {
@@ -34,5 +44,11 @@ Page({
           }
         }
       })
+  },
+  // 校验用户角色
+  checkUserRole(openid) {
+    return request({
+        url: `${api.queryByUserId}/${openid}`
+    })
   }
 })

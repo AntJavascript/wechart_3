@@ -1,5 +1,8 @@
 <view class='teach-info'>
-  <view class='rang-time-t'>我的预约时间段</view>
+  <view class='rang-time-t'>
+    我的预约时间段
+    <view class="close-time" bind:tap="closeReserve">关闭预约</view>
+  </view>
   <view class='rang-time-list'></view>
   <view wx:if="{{rangtimes.length == 0}}" class="no-data">你还没有添加可预约时间</view>
   <view class="add">
@@ -25,4 +28,5 @@
     />
     </view>
   </van-popup>
+  <van-dialog id="van-dialog" />
 </view>

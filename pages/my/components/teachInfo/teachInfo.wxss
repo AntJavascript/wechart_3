@@ -5,6 +5,11 @@
 .teach-info .rang-time-t {
   position: relative;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.teach-info .rang-time-t .close-time {
+  color: #0F62FE;
 }
 .teach-info .rang-time-t::before {
   content: ' ';

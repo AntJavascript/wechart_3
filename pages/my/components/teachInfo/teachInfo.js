@@ -1,3 +1,4 @@
+import Dialog from '@vant/weapp/dialog/dialog';
 Component({
   // 外部 props
     properties: {
@@ -58,6 +59,27 @@ Component({
         this.setData({
             currentType: type,
           })
+    },
+    beforeClose(action) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+              if (action === 'confirm') {
+                resolve(true);
+              } else {
+                // 拦截取消操作
+                resolve(true);
+              }
+            }, 1000);
+          })
+        },
+    closeReserve() {
+        Dialog.confirm({
+            zIndex:10000,
+            context: this,  // 添加this指向
+            title: "确定关闭预约？",
+            message: '关闭预约之后学员将不能对你进行预约',
+            beforeClose: this.beforeClose,
+          });
     }
   }
 })
