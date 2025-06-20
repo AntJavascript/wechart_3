@@ -5,6 +5,7 @@ Page({
   data: {
     logined: false, // 是否已经登录
     isteacher: false, // 是否teacher
+    loading: true, // 是否正在请求中
   },
   toRegTeacher() {
     wx.navigateTo({
