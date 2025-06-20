@@ -33,7 +33,8 @@ Page({
                 _this.checkUserRole(res?.data?.openid).then(user => {
                     _this.setData({
                         logined: true,
-                        isteacher: user.data.type === '0'
+                        isteacher: user.data.type === '0',
+                        loading: false,
                       })
                 })
                 wx.setStorageSync('token', res?.data?.token)
