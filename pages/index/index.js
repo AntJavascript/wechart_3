@@ -44,6 +44,11 @@ Page({
               }
             })
           } else {
+            wx.showToast({
+              title: '失败',
+              icon: 'error',
+              duration: 2000
+            })
             console.log('登录失败！' + res.errMsg)
           }
         }
