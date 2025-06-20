@@ -8,17 +8,20 @@ Page({
     loading: true, // 是否正在请求中
   },
   toRegTeacher() {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/regTeacher/regTeacher'
     })
   },
   toReguser() {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/userReg/userReg'
     })
   },
   onLoad() {
       wx.hideTabBar()
+      wx.showLoading({
+        title: '加载中',
+      })
       const _this = this
     wx.login({
         success (res) {
@@ -28,6 +31,7 @@ Page({
                 url: `${api.checkSessionKey}/${res.code}`
             }).then(res => {
                 console.log(res)
+                wx.hideLoading()
               if(res?.data?.token){// 当前微信用户已注册
                 wx.showTabBar()
                 _this.checkUserRole(res?.data?.openid).then(user => {
@@ -44,6 +48,7 @@ Page({
               }
             })
           } else {
+            wx.hideLoading()
             wx.showToast({
               title: '失败',
               icon: 'error',

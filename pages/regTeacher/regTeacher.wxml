@@ -1,21 +1,25 @@
 <scroll-view type="custom">
     <van-field model:value="{{ name }}" label="姓名" placeholder="请输入真实姓名" input-align="right" required />
+    <picker bindchange="bindGenderChange" value="{{gender}}" range="{{genderArray}}">
+        <van-field model:value="{{genderArray[gender]}}" label="性别" placeholder="请性别" input-align="right" readonly required is-link />
+    </picker>
     <van-field model:value="{{ phone }}" label="联系电话" placeholder="请输入联系电话" input-align="right" required />
     <van-field type="nickname" model:value="{{ nickname }}" label="昵称" placeholder="请输入昵称" input-align="right" required />
-   <!-- <van-field model:value="{{ phone }}" label="价格" placeholder="请输入价格/小时" input-align="right" required />-->
+   <van-field model:value="{{ price }}" label="价格" placeholder="请输入价格/小时" input-align="right" required />
     <picker bindchange="bindDisciplineChange" value="{{discipline}}" range="{{disciplineArray}}">
         <van-field model:value="{{disciplineArray[discipline]}}" label="学科" placeholder="请选择教学学科" input-align="right" readonly required is-link />
     </picker>
     <van-field model:value="{{ teachingYears }}" label="教龄" type="number" placeholder="请输入教龄" input-align="right" required />
-    <picker bindchange="bindEducationChange" value="{{discipline}}" range="{{educationArray}}">
+    <picker bindchange="bindEducationChange" value="{{education}}" range="{{educationArray}}">
         <van-field model:value="{{educationArray[education]}}" label="学历" placeholder="请选择学历" input-align="right" readonly required is-link />
     </picker>
+    <van-field model:value="{{ primarySchool }}" label="毕业院校(小学)" placeholder="请输入毕业院校" input-align="right" required />
     <van-field model:value="{{ middleSchool }}" label="毕业院校(初中)" placeholder="请输入毕业院校" input-align="right" required />
     <van-field model:value="{{ highSchool }}" label="毕业院校(高中)" placeholder="请输入毕业院校" input-align="right" required />
-    <van-field model:value="{{ school }}" label="毕业院校" placeholder="请输入毕业院校" input-align="right" required />
-    <picker bindchange="bindTeachingMethodChange" value="{{teachingMethod}}" range="{{teachingMethodArray}}">
+    <van-field model:value="{{ university }}" label="毕业院校(大学)" placeholder="请输入毕业院校" input-align="right" />
+    <!-- <picker bindchange="bindTeachingMethodChange" value="{{teachingMethod}}" range="{{teachingMethodArray}}">
         <van-field model:value="{{teachingMethodArray[teachingMethod]}}" label="授课方式" placeholder="请选择授课方式" input-align="right" readonly required is-link />
-    </picker>
+    </picker> -->
     <!-- <van-field model:value="{{ address }}" label="地址" placeholder="点击选择地址" input-align="right" required readonly bind:tap="toSelectMap" /> -->
     <view class="address" bind:tap="toSelectMap">
         <view class="cus-label">地址</view>

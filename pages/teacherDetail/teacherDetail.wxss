@@ -1,0 +1,27 @@
+.teacher-detail-page .base-content .label {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+}
+.teacher-detail-page .base-content .label .name {
+  flex-shrink: 0;
+}
+.teacher-detail-page .base-content .label .content {
+  color: #333;
+}
+.teacher-detail-page .desc {
+  font-size: 14px;
+}
+.teacher-detail-page .btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 44px;
+}
+.teacher-detail-page .btn .button {
+  width: 100%;
+}
+.teacher-detail-page .p44 {
+  height: 34px;
+}

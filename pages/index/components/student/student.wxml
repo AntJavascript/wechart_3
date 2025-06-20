@@ -3,18 +3,18 @@
         <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
     </view>
     <scroll-view class="container" type="list" scroll-y refresher-enabled="{{true}}" lower-threshold="50" refresher-triggered="{{isRefreshing}}" bindscrolltolower="loadMoreData" bindrefresherrefresh="bindscrolltoupper">
-        <view wx:for="{{40}}" wx:key="index" class="item">
+        <view wx:for="{{list}}" wx:key="index" class="item" data-userid="{{item.userId}}" bind:tap="toTeachDetail">
             <view class="face">
                 <image src="../../images/dancers-7731738_1280.jpg" mode="widthFix"></image>
             </view>
             <view class="content">
                 <view class="name-type">
-                    <view class="name">李老师</view>
-                    <view class="discipline">表演</view>
+                    <view class="name">{{item.name}}</view>
+                    <view class="discipline">{{item.teachingType}}</view>
                 </view>
-                <!-- <view class="price">100/小时</view> -->
-                <view class="school">毕业院校</view>
-                <view class="desc">asdsadasd萨达撒大声地撒打算打算大萨达撒大师的阿萨德阿萨德阿萨德阿是大asdsadasd萨达撒大声地撒打算打算大萨达撒大师的阿萨德阿萨德阿萨德阿是大</view>
+                <view class="price">{{item.price}}/小时</view>
+                <view class="school">{{item.university}}</view>
+                <view class="desc">{{item.personalProfile}}</view>
             </view>
         </view>
     </scroll-view>

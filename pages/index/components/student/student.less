@@ -1,0 +1,69 @@
+.student-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .container {
+        overflow: hidden;
+        height: 100%;
+
+        .item {
+            display: flex;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #eee;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+
+            .face {
+                min-width: 100px;
+                overflow: hidden;
+                margin-right: 12px;
+                margin-left: 12px;
+
+                image {
+                    max-width: 100px;
+                    min-height: 100px;
+                }
+            }
+
+            .content {
+                font-size: 14px;
+
+                .name-type {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .name {
+                        font-size: 16px;
+                    }
+
+                    .discipline {
+                        background: #0F62FE;
+                        color: #fff;
+                        padding: 2px 6px;
+                    }
+                }
+
+                .price {
+                    color: #f00;
+                    font-size: 16px;
+                }
+
+                .school {
+                    font-size: 16px;
+                    margin: 4px 0;
+                }
+
+                .desc {
+                    display: -webkit-box;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    color: #666;
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
-// pages/index/components/student/student.js
+const api = require('../../../../server/aip')
+const request = require('../../../../server/request')
 
 Component({
 
@@ -16,14 +17,29 @@ Component({
     value: '',
     isRefreshing: false,
     isLoading: false, // 加载数据中
+    list: []
   },
-
+  lifetimes: {
+    created(){
+        request({
+            url: api.teacherList
+        }).then(res => {
+            if(Array.isArray(res.data) && res.data.length > 0) {
+                this.setData({
+                    list: res.data
+                })
+            }
+            console.log(res,'====')
+        })
+    },
+    ready() {
+    }
+  },
   /**
    * 组件的方法列表
    */
   methods: {
     loadMoreData() {
-        
         if (this.data.isLoading) {
             wx.showToast({
                 title: '成功',
@@ -46,6 +62,13 @@ Component({
             })
         }, 3000)
     },
-   
+    toTeachDetail(e) {
+        console.log(e)
+        const userid = e.currentTarget.dataset.userid
+        console.log(userid)
+        wx.navigateTo({
+          url: `/pages/teacherDetail/teacherDetail?userid=${userid}`,
+        })
+    }
   }
 })

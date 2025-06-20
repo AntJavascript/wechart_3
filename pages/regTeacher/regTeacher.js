@@ -10,30 +10,37 @@ Page({
             maxHeight: 100,
             minHeight: 50
         },
-        name: "移动端", // 姓名
-        nickname: "微信昵称", // 昵称
-        phone: "1581735609", // 联系电话
+        name: "", // 姓名
+        gender: "", // 性别
+        genderArray: ['男', '女'], // 性别选项
+        nickname: "", // 昵称
+        phone: "", // 联系电话
         price: "", // 价格
-        discipline: "2", // 教学学科
+        discipline: "", // 教学学科
         disciplineArray: ['管理学', '医学', '农学', '工学'], // 教学学科选项
-        teachingYears: "3", // 教龄
-        education: "1", // 学历
+        teachingYears: "", // 教龄
+        education: "", // 学历
         educationArray: ["专科", "本科", "硕士研究生", "博士研究生"], // 学历选项
-        middleSchool: "初中", // 毕业院校(初中)
-        highSchool: "高中", // 毕业院校(高中)
-        school: "大学", // 毕业院校（大学）
+        primarySchool: "", // 毕业院校（小学学）
+        middleSchool: "", // 毕业院校(初中)
+        highSchool: "", // 毕业院校(高中)
+        university: "", // 毕业院校（大学）
         teachingMethod: "0", // 授课方式
         teachingMethodArray: ['学生上门', '网络授课', '上门授课'], // 授课方式选项
-        address: '广东省深圳市龙湖区高坳新村', // 地址
-        personaldesc: "阿斯顿撒大是的阿萨德阿萨德阿是大打", // 个人描述
+        address: '', // 地址
+        personaldesc: "", // 个人描述
         personalPhotos: [], // 个人照片
         IDCards: [], // 身份证
         academicCertificates: [], // 学历证书
         vocationalCertificates: [], // 职业证书
         HonorCertificates: [], // 荣誉证书
     },
+    bindGenderChange(e) {
+        this.setData({
+            gender: e.detail.value
+        })
+    },
     bindDisciplineChange(e) {
-        console.log('picker发送选择改变，携带值为', e.detail.value)
         this.setData({
             discipline: e.detail.value
         })
@@ -154,13 +161,16 @@ Page({
                     url: api.saveTeacherInfo,
                     method: 'POST',
                     data: {
-                        openid: wx.getStorageSync('openid'),
+                        userId: wx.getStorageSync('openid'),
                         name: this.data.name,
                         vxName: this.data.nickname,
                         gender: 'man',
-                        primarySchool: this.data.school,
+                        address: this.data.address,
+                        primarySchool: this.data.primarySchool,
                         middleSchool: this.data.middleSchool,
                         highSchool: this.data.highSchool,
+                        university: this.data.university,
+                        teachingType: this.data.disciplineArray[this.data.discipline],
                         lifePicture: this.data.personalPhotos.map((item) => {
                             return item.url
                         }).join(','),
@@ -171,15 +181,21 @@ Page({
                         mobile: this.data.phone,
                         teachingSeniority: this.data.teachingYears,
                         personalProfile: this.data.personaldesc,
-                        academicQualification: this.data.education
+                        academicQualification: this.data.educationArray[this.data.education],
+                        price: this.data.price
                     },
                     header: {
                         'content-type': 'application/json', // 默认值
                     },
-                    success(res):()=> {
+                    success:(res)=> {
                         console.log(res.data)
-                        wx.redirectTo({
-                            url: 'pages/index/index'
+                        wx.navigateBack()
+                    },
+                    fail: () => {
+                        console.log(1)
+                        wx.showToast({
+                          title: '提交失败',
+                          icon: 'error'
                         })
                     }
                 })

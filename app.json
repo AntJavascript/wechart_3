@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/teacherDetail/teacherDetail",
     "pages/my/index",
     "pages/userReg/userReg",
     "pages/regTeacher/regTeacher"

@@ -1,8 +1,37 @@
 <view class="teacher-detail-page">
 <detail-card title="基本信息">
-  <view class="content">
-    <view>姓名：<view>李老师</view></view>
-    <view>学科：<view>书法</view></view>
+  <view class="base-content">
+    <view class="label">
+        <view class="name">姓名：</view>
+        <view class="content">李老师李老师李老师李老师李老师李老师李老师李老师李老师李老师李老师李老师李老师</view>
+    </view>
+    <view class="label">昵称：<view>微信昵称</view></view>
+    <view class="label">教龄：<view>2</view></view>
+    <view class="label">学科：<view>书法</view></view>
+    <view class="label">授课方式：<view>上门家教</view></view>
+    <view class="label">
+        <view class="name">毕业学校(初中)：</view>
+        <view class="content">李老师李老师李老师李老师李老师李老师李老师李老师李老师李老师李老师李老师李老师</view>
+    </view>
+    <view class="label">学科(高中)：<view>书法</view></view>
+    <view class="label">学科(大学)：<view>书法</view></view>
   </view>
 </detail-card>
+<detail-card title="个人简介">
+  <view class="desc">
+    asdasdsadsadsadasdsadasdasdasdsadasdasd啊水箱总成中兄次之中兄次之翠竹新村
+  </view>
+</detail-card>
+<detail-card title="个人照片">
+</detail-card>
+<detail-card title="学历证书">
+</detail-card>
+<detail-card title="职业证书">
+</detail-card>
+<detail-card title="荣誉证书">
+</detail-card>
+<view class="p44"></view>
+<view class="btn">
+    <van-button class="button" type="info" block>查看可预约时间</van-button>
+</view>
 </view>
