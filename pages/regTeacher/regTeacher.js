@@ -176,8 +176,11 @@ Page({
                     header: {
                         'content-type': 'application/json', // 默认值
                     },
-                    success(res) {
+                    success(res):()=> {
                         console.log(res.data)
+                        wx.redirectTo({
+                            url: 'pages/index/index'
+                        })
                     }
                 })
             }
