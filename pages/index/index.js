@@ -8,12 +8,12 @@ Page({
     loading: true, // 是否正在请求中
   },
   toRegTeacher() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/regTeacher/regTeacher'
     })
   },
   toReguser() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/userReg/userReg'
     })
   },
