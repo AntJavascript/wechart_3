@@ -18,6 +18,7 @@ Page({
     })
   },
   onLoad() {
+      wx.hideTabBar()
       const _this = this
     wx.login({
         success (res) {
@@ -27,7 +28,8 @@ Page({
                 url: `${api.checkSessionKey}/${res.code}`
             }).then(res => {
                 console.log(res)
-              if(res?.data?.token){
+              if(res?.data?.token){// 当前微信用户已注册
+                wx.showTabBar()
                 _this.checkUserRole(res?.data?.openid).then(user => {
                     _this.setData({
                         logined: true,
